@@ -19,9 +19,9 @@ public class ChatActivity extends AppCompatActivity {
     private List<String> messageList;
     private ArrayAdapter<String> messageAdapter;
     private EditText messageEditText;
-    private Button sendButton;
 
-    //red
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,7 @@ public class ChatActivity extends AppCompatActivity {
 
         ListView chatListView = findViewById(R.id.chatListView);
         messageEditText = findViewById(R.id.messageEditText);
-        sendButton = findViewById(R.id.sendButton);
+        Button sendButton = findViewById(R.id.sendButton);
 
         messageList = new ArrayList<>();
         messageAdapter = new ArrayAdapter<String>(this, R.layout.item_message, R.id.messageTextView, messageList) {
