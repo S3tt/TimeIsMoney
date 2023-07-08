@@ -21,6 +21,7 @@ public class ChatActivity extends AppCompatActivity {
     private EditText messageEditText;
     private Button sendButton;
 
+    //red
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,15 +43,12 @@ public class ChatActivity extends AppCompatActivity {
         };
         chatListView.setAdapter(messageAdapter);
 
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String message = messageEditText.getText().toString().trim();
-                if (!message.isEmpty()) {
-                    messageList.add(message);
-                    messageAdapter.notifyDataSetChanged();
-                    messageEditText.setText("");
-                }
+        sendButton.setOnClickListener(v -> {
+            String message = messageEditText.getText().toString().trim();
+            if (!message.isEmpty()) {
+                messageList.add(message);
+                messageAdapter.notifyDataSetChanged();
+                messageEditText.setText("");
             }
         });
     }
